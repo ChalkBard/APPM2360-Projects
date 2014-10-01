@@ -697,10 +697,6 @@ name "tab:Year-Discrete-and"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -833,6 +829,9 @@ Initial Value Problem
 \end_layout
 
 \begin_layout Section
+\begin_inset space ~
+\end_inset
+
 Behaviour of rate of payment over Time
 \end_layout
 
@@ -845,6 +844,9 @@ Payment needed to pay off debt in a given time
 \end_layout
 
 \begin_layout Section
+\begin_inset space ~
+\end_inset
+
 Accuracy of Installment Debt Model
 \end_layout
 
@@ -853,10 +855,16 @@ Installment Savings
 \end_layout
 
 \begin_layout Section
+\begin_inset space ~
+\end_inset
+
 Calculation
 \end_layout
 
 \begin_layout Section
+\begin_inset space ~
+\end_inset
+
 Initial Value Solution
 \end_layout
 
