@@ -71,27 +71,22 @@
 \begin_body
 
 \begin_layout Title
-APPM 2360: Credit Model
+APPM 2360: Credit Model Project 1
 \end_layout
 
-\begin_layout Title
-Project 1
-\end_layout
-
-\begin_layout Author
+\begin_layout Standard
+\align center
 Name (SID) (Lecture) (Recitation)
 \end_layout
 
-\begin_layout Author
+\begin_layout Standard
+\align center
 Name (SID) (Lecture) (Recitation)
 \end_layout
 
-\begin_layout Author
+\begin_layout Standard
+\align center
 William Sear (101107069) (L160) (R251)
-\end_layout
-
-\begin_layout Date
-10/01/2014
 \end_layout
 
 \begin_layout Abstract
@@ -286,10 +281,6 @@ name "fig:Annual-Compounding-Rate20"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -775,10 +766,6 @@ name "fig:Derivative-of-Model4"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -830,10 +817,6 @@ name "fig:Direction-Field-ofmodel4"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 

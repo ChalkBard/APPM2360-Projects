@@ -37,64 +37,64 @@ reset(symengine)
     r = .1;
         %n = 1
         plot(t, model1(t, 1, r, Ao), t, model2(t, r, Ao))
-        xlabel('t-value')
+        xlabel('Years')
         ylabel('Ac/Ad-Value')
         title('n: 1 and r: 10%')
         legend('Continous Model', 'Discrete Model')
-        saveas(figure, 'n1r10', 'eps')
+        print -depsc n1r10.eps
         %n = 2
         plot(t, model1(t, 2, r, Ao), t, model2(t, r, Ao))
-        xlabel('t-value')
+        xlabel('Years')
         ylabel('Ac-Value')
         title('n: 2 and r: 10%')
         legend('Continous Model', 'Discrete Model')
-        saveas(figure, 'n2r10', 'eps')
+        print -depsc n2r10.eps
         %n = 4
         
         plot(t, model1(t, 4, r, Ao), t, model2(t, r, Ao))
-        xlabel('t-value')
+        xlabel('Years')
         ylabel('Ac-Value')
         title('n: 4 and r: 10%')
         legend('Continous Model', 'Discrete Model')
-        saveas(figure, 'n4r10', 'eps')
+       print -depsc n4r10.eps
         %n = 12
         
         plot(t, model1(t, 12, r, Ao), t, model2(t, r, Ao))
-        xlabel('t-value')
+        xlabel('Years')
         ylabel('Ac-Value')
         title('n: 12 and r: 10%')
         legend('Continous Model', 'Discrete Model')
-        saveas(figure, 'n12r10', 'eps')
+        print -depsc n12r10.eps
     %Create 4 curves such that 0<=t<=100 and Ao = 1 and r=20%
     r = .2;
       %n = 1        
         plot(t, model1(t, 1, r, Ao), t, model2(t, r, Ao))
-        xlabel('t-value')
+        xlabel('Years')
         ylabel('Ad-Value')
         title('n: 1 and r: 20%')
         legend('Continous Model', 'Discrete Model')
-        saveas(figure, 'n1r20', 'eps')
+        print -depsc n1r20.eps
         %n = 2        
         plot(t, model1(t, 2, r, Ao), t, model2(t, r, Ao))
-        xlabel('t-value')
+        xlabel('Years')
         ylabel('Ad-Value')
         title('n: 2 and r: 20%')
         legend('Continous Model', 'Discrete Model')
-        saveas(figure, 'n2r20', 'eps')
+        print -depsc n2r20.eps
         %n = 4        
         plot(t, model1(t, 4, r, Ao), t, model2(t, r, Ao))
-        xlabel('t-value')
+        xlabel('Years')
         ylabel('Ad-Value')
         title('n: 4 and r: 20%')
         legend('Continous Model', 'Discrete Model')
-        saveas(figure, 'n4r20', 'eps')
+        print -depsc n4r20.eps
         %n = 12   
         plot(t, model1(t, 12, r, Ao), t, model2(t, r, Ao))
-        xlabel('t-value')
+        xlabel('Years')
         ylabel('Ad-Value')
         title('n: 12 and r: 20%')
         legend('Continous Model', 'Discrete Model')
-        saveas(figure, 'n12r20', 'eps')
+        print -depsc n12r20.eps
         
     %How accurate is model 2 vs. model 1
     %   Determined in Paper
@@ -105,19 +105,19 @@ reset(symengine)
     %   r=10%
     r=.1;
     plot(t, model1(t, 365, r, Ao), t, model2(t, r, Ao))
-    xlabel('t-value')
+    xlabel('Years')
     ylabel('Ad-Value')
     title('n: 365 and r: 10%')
     legend('Continous Model', 'Discrete Model')
-    saveas(figure, 'Prob4_r10', 'eps')
+    print -depsc Prob4_r10.eps
     %   r=20%
     r=.2;
     plot(t, model1(t, 365, r, Ao), t, model2(t, r, Ao))
-    xlabel('t-value')
+    xlabel('Years')
     ylabel('Ad-Value')
     title('n: 365 and r: 20%')
     legend('Continous Model', 'Discrete Model')
-    saveas(figure, 'Prob4_r20', 'eps')
+    print -depsc Prob4_r20.eps
     %In what year will the difference between the models be greater that
     %$1? Ao=1 try r= {6.9%, 12.99%, 19.99%}
     %6.9
@@ -172,34 +172,38 @@ plot(Ac, model4(Ac, P, r))
 xlabel('Ac-value')
 ylabel('dAc/dt-Value')
 title('Model 4')
-saveas(figure, 'model4', 'eps')
+print -depsc model4.eps
 
 %Question 7
 %   r=10% and P=20 in model 4 so plot the slope field
-[T, Y] = meshgrid(-5:.1:5, -25:1:25);
+[T, Y] = meshgrid(-5:.1:5, -300:1:300);
 quiver(T, Y, ones(size(T)), model4(Y, 20, .1))
 hold on
 r = .1;
 P = 20;
-Ac = -25:1:25;
+Ac = -300:1:300;
 plot(Ac, model4(Ac, P, r))
-xlabel('t-value')
+xlabel('Years')
 ylabel('Ac-Value')
 title('Model 4 Direction Field')
-saveas(figure, 'model4dirfield', 'eps')
-
+print -depsc model4dirfield.eps
+hold off
 %Question 8
 %   Solve model 4 as an IVP with Ao
 model4eqn = 'DA = r*A-P'
 soln4 = dsolve(model4eqn)
+ syms Ao r t A P C2
+    model4SolvedAo = solve(((P - C2*exp(r*t))/r)-Ao, C2)
+    reset(symengine)
 
 %Question 9
 %   Using the result from 8 solve for time t
 
     %Solve for t
-    syms Ao r t A P
-    model4SolvedT = solve(soln4-A, t)
+    syms Ao r t A P C2
+    model4SolvedT = solve((P -(-r*Ao+P)/r)-A, t)
     reset(symengine)
+    
     %Plot t as a function of Pr
     Ac = 1;
     r = .1;
@@ -208,9 +212,9 @@ soln4 = dsolve(model4eqn)
     t = log((P-A*r)/Ac)/r;
     plot(P, t)
     xlabel('P-value')
-    ylabel('t-Value')
+    ylabel('Years')
     title('Model 4 Time vs. P-Value')
-    saveas(figure, 'model4timeVp', 'eps')
+    print -depsc model4timeVp
     
  %Question 11
  %plot P as a function of t
@@ -224,8 +228,8 @@ soln4 = dsolve(model4eqn)
     t = 0:1:10;
     P = A*r + Ao*exp(r*t);
     plot(t, P)
-    xlabel('t-value')
+    xlabel('Years')
     ylabel('P-Value')
     title('Model 4 P-Value vs. time')
-    saveas(figure, 'model4pVtime', 'eps')
+    print -depsc model4pVtime
     
