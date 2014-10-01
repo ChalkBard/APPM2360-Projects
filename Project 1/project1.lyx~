@@ -3,6 +3,14 @@
 \begin_document
 \begin_header
 \textclass article
+\begin_preamble
+\renewcommand*\thepart{\arabic{part}}% arabic numbers for part
+\makeatletter
+\@addtoreset{section}{part}% reset section number when a new part starts
+\makeatother
+\renewcommand*\thesection{\thepart.\arabic{section}}% section 1.1
+\renewcommand*\thesubsection{\thesection.\arabic{subsection}}% subsection 1.1.1
+\end_preamble
 \use_default_options true
 \maintain_unincluded_children false
 \language english
@@ -25,9 +33,10 @@
 \bibtex_command default
 \index_command default
 \paperfontsize default
+\spacing single
 \use_hyperref false
 \papersize default
-\use_geometry false
+\use_geometry true
 \use_amsmath 1
 \use_esint 1
 \use_mhchem 1
@@ -42,6 +51,8 @@
 \shortcut idx
 \color #008000
 \end_index
+\leftmargin 1in
+\rightmargin 1in
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
@@ -84,14 +95,7 @@ William Sear (101107069) (L160) (R251)
 \end_layout
 
 \begin_layout Abstract
-This project
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage pagebreak
-\end_inset
-
-
+This paper will 
 \end_layout
 
 \begin_layout Standard
@@ -115,7 +119,10 @@ Models under Consideration
 \end_layout
 
 \begin_layout Section
-Discrete Model for Account Balance in year t
+\begin_inset space ~
+\end_inset
+
+Discrete Model for Account Balance
 \end_layout
 
 \begin_layout Standard
@@ -130,7 +137,10 @@ A_{d}(t)=A_{0}(1+\frac{r}{n})^{nt}\label{eq:model1}
 \end_layout
 
 \begin_layout Section
-Continous Model for Account Balance in year t
+\begin_inset space ~
+\end_inset
+
+Continous Model for Account Balance
 \end_layout
 
 \begin_layout Standard
@@ -145,6 +155,9 @@ A_{c}(t)=A_{0}e^{rt}\label{eq:model2}
 \end_layout
 
 \begin_layout Section
+\begin_inset space ~
+\end_inset
+
 Rate of Change in Account Balance in Continous Model
 \end_layout
 
@@ -160,6 +173,9 @@ Rate of Change in Account Balance in Continous Model
 \end_layout
 
 \begin_layout Section
+\begin_inset space ~
+\end_inset
+
 Installment Debt Rate Model
 \end_layout
 
@@ -183,18 +199,30 @@ Comparison of Discrete and Continous Account Balance Models
 \end_layout
 
 \begin_layout Section
+\begin_inset space ~
+\end_inset
+
+Comparison of Discrete model as compounding rate increases
+\end_layout
+
+\begin_layout Section
+\begin_inset space ~
+\end_inset
+
 Compounding rate calculated annually
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
-	filename n1r20.eps
+	filename n1r10.eps
 
 \end_inset
 
@@ -227,11 +255,13 @@ ing Rate of 10%
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename n1r20.eps
 
@@ -269,16 +299,21 @@ name "fig:Annual-Compounding-Rate20"
 \end_layout
 
 \begin_layout Section
+\begin_inset space ~
+\end_inset
+
 Compounding rate calculated biannually
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename n2r10.eps
 
@@ -313,11 +348,13 @@ name "fig:Biannual-Compouding-Rate10"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename n2r20.eps
 
@@ -351,16 +388,21 @@ name "fig:Biannual-Compounding-Rate20"
 \end_layout
 
 \begin_layout Section
+\begin_inset space ~
+\end_inset
+
 Compounding rate calculated quarterly
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename n4r10.eps
 
@@ -388,11 +430,13 @@ Quarterly Compouding Rate of 10%
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename n4r20.eps
 
@@ -419,7 +463,418 @@ Quarterly Compounding Rate of 20%
 \end_layout
 
 \begin_layout Section
+\begin_inset space ~
+\end_inset
+
 Compounding rate calculated monthy
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename n12r10.eps
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Monthly Compouding Rate of 10%
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Monthly-Compouding-Rate10"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename n12r20.eps
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Monthly Compounding Rate of 20%
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Monthly-Compounding-Rate20"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset space ~
+\end_inset
+
+Accuracy of Discrete model compared to Continous model
+\end_layout
+
+\begin_layout Subsection
+Qualitative Review
+\end_layout
+
+\begin_layout Standard
+Review Graphs in detail here (behaviour of n and r)
+\end_layout
+
+\begin_layout Subsection
+Quantitative Review
+\end_layout
+
+\begin_layout Standard
+In what year is the difference greater than a dollar?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Year
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6.9%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+107
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12.99%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+53
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+19.99%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+33
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Assumptions: 
+\begin_inset Formula $A_{0}=1$
+\end_inset
+
+ and 
+\begin_inset Formula $n=365$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Year Discrete and Continous Models differ by one dollar
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Year-Discrete-and"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Characterization of Installment Debt Model
+\end_layout
+
+\begin_layout Section
+\begin_inset space ~
+\end_inset
+
+Equilibrium Solution
+\end_layout
+
+\begin_layout Section
+\begin_inset space ~
+\end_inset
+
+Derivative Behavior
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename model4.eps
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Derivative of Model 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:model4"
+
+\end_inset
+
+ at account balance
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Derivative-of-Model4"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset space ~
+\end_inset
+
+Direction Field
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename model4dirfield.eps
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Direction Field of Model 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:model4"
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Direction-Field-ofmodel4"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset space ~
+\end_inset
+
+Initial Value Problem
+\end_layout
+
+\begin_layout Section
+Behaviour of rate of payment over Time
+\end_layout
+
+\begin_layout Subsection
+Time to pay off debt at rate of payment
+\end_layout
+
+\begin_layout Subsection
+Payment needed to pay off debt in a given time
+\end_layout
+
+\begin_layout Section
+Accuracy of Installment Debt Model
+\end_layout
+
+\begin_layout Part
+Installment Savings
+\end_layout
+
+\begin_layout Section
+Calculation
+\end_layout
+
+\begin_layout Section
+Initial Value Solution
 \end_layout
 
 \end_body
