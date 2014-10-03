@@ -8,12 +8,12 @@ clc
 
 %Question 2
 %   Show that taking the compounding rate to infinity, model (1) converges to model (2).
-syms Ao r n t
-assume(Ao >0)
-assume(r > 0)
-assume (t > 0)
-model1Limit=limit(Ao.*(1+(r./n)).^(n.*t), r , Inf, 'left')
-reset(symengine)
+% syms Ao r n t
+% assume(Ao >0)
+% assume(r > 0)
+% assume (t > 0)
+% model1Limit=limit(Ao.*(1+(r./n)).^(n.*t), r , Inf, 'left')
+% reset(symengine)
 
 %Question 3
 %   Steps below:
@@ -38,62 +38,62 @@ reset(symengine)
         %n = 1
         plot(t, model1(t, 1, r, Ao), t, model2(t, r, Ao))
         xlabel('Years')
-        ylabel('Ac/Ad-Value')
-        title('n: 1 and r: 10%')
-        legend('Continous Model', 'Discrete Model')
+        ylabel('Account Balance')
+        title('Annual Intrest rate of 10%')
+       legend('Discrete Model', 'Continous Model')
         print -depsc n1r10.eps
         %n = 2
         plot(t, model1(t, 2, r, Ao), t, model2(t, r, Ao))
         xlabel('Years')
-        ylabel('Ac-Value')
-        title('n: 2 and r: 10%')
-        legend('Continous Model', 'Discrete Model')
+        ylabel('Account Balance')
+        title('Biannual Intrest Rate of 20%')
+       legend('Discrete Model', 'Continous Model')
         print -depsc n2r10.eps
         %n = 4
         
         plot(t, model1(t, 4, r, Ao), t, model2(t, r, Ao))
         xlabel('Years')
-        ylabel('Ac-Value')
-        title('n: 4 and r: 10%')
-        legend('Continous Model', 'Discrete Model')
+        ylabel('Account Balance')
+        title('Quarterly Intrest Rate of 10%')
+       legend('Discrete Model', 'Continous Model')
        print -depsc n4r10.eps
         %n = 12
         
         plot(t, model1(t, 12, r, Ao), t, model2(t, r, Ao))
         xlabel('Years')
-        ylabel('Ac-Value')
-        title('n: 12 and r: 10%')
-        legend('Continous Model', 'Discrete Model')
+        ylabel('Account Balance')
+        title('Monthly Intrest Rate of 10%')
+       legend('Discrete Model', 'Continous Model')
         print -depsc n12r10.eps
     %Create 4 curves such that 0<=t<=100 and Ao = 1 and r=20%
     r = .2;
       %n = 1        
         plot(t, model1(t, 1, r, Ao), t, model2(t, r, Ao))
         xlabel('Years')
-        ylabel('Ad-Value')
-        title('n: 1 and r: 20%')
-        legend('Continous Model', 'Discrete Model')
+        ylabel('Account Balance')
+        title('Yearly Intrest Rate of 20%')
+        legend('Discrete Model', 'Continous Model')
         print -depsc n1r20.eps
         %n = 2        
         plot(t, model1(t, 2, r, Ao), t, model2(t, r, Ao))
         xlabel('Years')
-        ylabel('Ad-Value')
-        title('n: 2 and r: 20%')
-        legend('Continous Model', 'Discrete Model')
+        ylabel('Account Balance')
+        title('Biannual Intrest Rate of 20%')
+       legend('Discrete Model', 'Continous Model')
         print -depsc n2r20.eps
         %n = 4        
         plot(t, model1(t, 4, r, Ao), t, model2(t, r, Ao))
         xlabel('Years')
-        ylabel('Ad-Value')
-        title('n: 4 and r: 20%')
-        legend('Continous Model', 'Discrete Model')
+        ylabel('Account Balance')
+        title('Quarterly Intrest rate of 20%')
+        legend('Discrete Model', 'Continous Model')
         print -depsc n4r20.eps
         %n = 12   
         plot(t, model1(t, 12, r, Ao), t, model2(t, r, Ao))
         xlabel('Years')
-        ylabel('Ad-Value')
-        title('n: 12 and r: 20%')
-        legend('Continous Model', 'Discrete Model')
+        ylabel('Account Balance')
+        title('Monthly Intrest Rate of 20%')
+        legend('Discrete Model', 'Continous Model')
         print -depsc n12r20.eps
         
     %How accurate is model 2 vs. model 1
@@ -106,17 +106,17 @@ reset(symengine)
     r=.1;
     plot(t, model1(t, 365, r, Ao), t, model2(t, r, Ao))
     xlabel('Years')
-    ylabel('Ad-Value')
-    title('n: 365 and r: 10%')
-    legend('Continous Model', 'Discrete Model')
+    ylabel('Account Balance')
+    title('Daily Intrest Rate of 10%')
+    legend('Discrete Model', 'Continous Model')
     print -depsc Prob4_r10.eps
     %   r=20%
     r=.2;
     plot(t, model1(t, 365, r, Ao), t, model2(t, r, Ao))
     xlabel('Years')
-    ylabel('Ad-Value')
-    title('n: 365 and r: 20%')
-    legend('Continous Model', 'Discrete Model')
+    ylabel('Account Balance')
+    title('Daily Intrest Rate of 20%')
+    legend('Discrete Model', 'Continous Model')
     print -depsc Prob4_r20.eps
     %In what year will the difference between the models be greater that
     %$1? Ao=1 try r= {6.9%, 12.99%, 19.99%}
@@ -169,22 +169,27 @@ r = .1;
 P = 20;
 Ac = 0:.5:300;
 plot(Ac, model4(Ac, P, r))
-xlabel('Ac-value')
-ylabel('dAc/dt-Value')
-title('Model 4')
+xlabel('Account Balance')
+ylabel('Change in Account Balance')
+title('Derivative Behavior of Model 4')
 print -depsc model4.eps
 
 %Question 7
-%   r=10% and P=20 in model 4 so plot the slope field
-[T, Y] = meshgrid(-5:.1:5, -300:1:300);
+  %r=10% and P=20 in model 4 so plot the slope field
+[T, Y] = meshgrid(0:10:300, 0:50:900);
 quiver(T, Y, ones(size(T)), model4(Y, 20, .1))
-hold on
+ hold on
 r = .1;
 P = 20;
-Ac = -300:1:300;
-plot(Ac, model4(Ac, P, r))
+t=0:.1:300;
+plot(t, ((P - (P - 200*r)*exp(r*t))/r))
+hold on
+plot(t, ((P - (P - 250*r)*exp(r*t))/r))
+plot(t, ((P - (P - 100*r)*exp(r*t))/r))
+plot(t, ((P - (P - 0*r)*exp(r*t))/r))
+axis([0, 300, 0, 900])
 xlabel('Years')
-ylabel('Ac-Value')
+ylabel('Account Balance')
 title('Model 4 Direction Field')
 print -depsc model4dirfield.eps
 hold off
@@ -192,7 +197,8 @@ hold off
 %   Solve model 4 as an IVP with Ao
 model4eqn = 'DA = r*A-P'
 soln4 = dsolve(model4eqn)
- syms Ao r t A P C2
+t=0;
+ syms Ao r A P C2
     model4SolvedAo = solve(((P - C2*exp(r*t))/r)-Ao, C2)
     reset(symengine)
 
@@ -201,35 +207,41 @@ soln4 = dsolve(model4eqn)
 
     %Solve for t
     syms Ao r t A P C2
-    model4SolvedT = solve((P -(-r*Ao+P)/r)-A, t)
+    model4SolvedT = solve(((P - (P - Ao*r)*exp(r*t))/r)-A, t)
     reset(symengine)
     
     %Plot t as a function of Pr
-    Ac = 1;
+    Ao = 1;
     r = .1;
     A = 2;
-    P = -20:1:20;
-    t = log((P-A*r)/Ac)/r;
+    P = 0:1:10;
+    t = log((P - A.*r)./(P - Ao.*r))./r;
     plot(P, t)
-    xlabel('P-value')
+    xlabel('Payment to Account')
     ylabel('Years')
-    title('Model 4 Time vs. P-Value')
+    title('Years to Reach Account Balance for a given Payment')
     print -depsc model4timeVp
-    
+%     
  %Question 11
  %plot P as a function of t
  syms Ao r t A P
- model4SolvedP = solve((log((P-A*r)/Ao)/r)-t, P)
+ model4SolvedP = solve(((P - (P - Ao*r)*exp(r*t))/r)-A, P)
  reset(symengine)
 %  
  Ao = 1;
     r = 1;
-    A = 2;
+    A = 5;
     t = 0:1:10;
-    P = A*r + Ao*exp(r*t);
+    P = -(r.*(A - Ao.*exp(r*t)))./(exp(r.*t) - 1);
     plot(t, P)
     xlabel('Years')
-    ylabel('P-Value')
-    title('Model 4 P-Value vs. time')
+    ylabel('Payent')
+    title('Payment Required to Reach Desired Balance in Time')
     print -depsc model4pVtime
     
+    model5eqn = 'DA = r*A+P'
+soln5 = dsolve(model5eqn)
+t=0;
+ syms Ao r A P C2
+    model5SolvedAo = solve((-(P - C2*exp(r*t))/r)-Ao, C2)
+    reset(symengine)
