@@ -6,24 +6,18 @@ function linearShooting
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %INPUTS.  Change these to adjust for the problem you are solving.
-S=900;
-L=360;
-E=5e7;
-I=600;
-Q=5;
-a = 0;  b = L;             %the endpoints of the interval, a<x<b.
+
+a = 0;  b = 360;             %the endpoints of the interval, a<x<b.
 h = 12;                    %space between points on x axis.
-alpha = 0;  beta = 0;       %boundary values.  y(a)=alpha, y(b)=beta.
-p = @(x) 0;     %continuous function
-q = @(x)  S./(E.*I);      %positive continuous function
-r = @(x)  Q*x./(2*E.*I).*(x-L);       %continuous function
+alpha = 1;  beta = 2;       %boundary values.  y(a)=alpha, y(b)=beta.
+p = @(x) -sqrt(1+x.^2);     %continuous function
+q = @(x)  1./(1+x.^2);      %positive continuous function
+r = @(x)  exp(-x.^2);       %continuous function
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %Main part of the code.  Solves numerically the two IVP systems with
 %ode45, and then combines the results to form the solution y to the BVP.
-
-
 
 t = a:h:b;
 
@@ -40,12 +34,9 @@ y = y1 + (beta-y1(end)) / y2(end) * y2;
 
 figure(1), clf, hold('on')
 plot( t, y, 'k', 'lineWidth', 2 )
-[maxDeflectionValue,index] = max(y);
-maxDeflectionPosition = index * h;
-
 plot( t, y, 'k.', 'markerSize', 20 )
 set( gca, 'fontSize', 15 )
-xlabel('Position on Beam (in)'), ylabel('Deflection of Beam (in)')
+xlabel('x'), ylabel('y(x)')
 grid('on')
 drawnow, hold('off')
 
@@ -66,4 +57,3 @@ drawnow, hold('off')
     end
 
 end
-
