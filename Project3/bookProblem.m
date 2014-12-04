@@ -75,22 +75,18 @@ for k = 1:1:row;
     ekVec(k,1) = k;
     ekVec(k,2) = norm(transpose(bkVec(k,:))-domV);
 end
-%semilogy(ekVec(:,1), ekVec(:,2))
-%plot(ekVec(:,1), log(ekVec(:,2)))
-%[domV2, domGamma2] = eigs(studentMatrix,1);
+
 rateConv = ekVec(51,2)/ekVec(50,2)
-rateConv2 = ekVec(2,2)/ekVec(1,2);
-rateConv3 = ekVec(102,2)/ekVec(101,2)
 for i = 1:1:row;
     rval(i, 1) = (log(rateConv)/log(10))*i;
 end
-%plot(rval)
 [hAx,hLine1,hLine2] = plotyy(ekVec(:,1),ekVec(:,2),ekVec(:,1),rval,'semilogy','plot');
 xlabel('Iteration')
 ylabel(hAx(1),'Error From True EigenVector')
 ylabel(hAx(2),'R-Value')
 title('Error vs. Iteration');
-filename = 'vectorData.xlsx';
-A = domV;
-xlswrite(filename,A)
-[vec, eig]=eigs(studentMatrix, 1)
+for(i=1:1:33)
+    vert(i,1) = i;
+end
+sortedRows = horzcat(domV, vert);
+sortedPeople = sortrows(sortedRows, 1)

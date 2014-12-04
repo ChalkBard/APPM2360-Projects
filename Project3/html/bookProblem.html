@@ -1,0 +1,322 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>bookProblem</title><meta name="generator" content="MATLAB 8.2"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2014-12-04"><meta name="DC.source" content="bookProblem.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, tt, code { font-size:12px; }
+pre { margin:0px 0px 20px; }
+pre.error { color:red; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><pre class="codeinput"><span class="comment">%Question 4</span>
+                <span class="comment">%1, 2, 3, 4, 5, 6,</span>
+bookAdjacency = [0, 0, 0, 0, 1, 0;<span class="comment">%1</span>
+                 0, 0, 0, 0, 1, 1;<span class="comment">%2</span>
+                 0, 1, 0, 0, 0, 1;<span class="comment">%3</span>
+                 1, 0, 1, 0, 1, 0;<span class="comment">%4</span>
+                 1, 1, 0, 1, 0, 0;<span class="comment">%5</span>
+                 1, 1, 1, 0, 0, 0]<span class="comment">%6</span>
+[v,e]=eigs(bookAdjacency, 1)
+
+<span class="comment">%Create student matrix</span>
+load(<span class="string">'student_adjacency.txt'</span>)
+studentMatrix = zeros(33, 33);
+addedZeros = zeros(30,1);
+addedZeros2 = zeros(1, 33);
+student_adjacency = horzcat(student_adjacency, addedZeros);
+student_adjacency = horzcat(student_adjacency, addedZeros);
+student_adjacency = horzcat(student_adjacency, addedZeros);
+student_adjacency = vertcat(student_adjacency, addedZeros2);
+student_adjacency = vertcat(student_adjacency, addedZeros2);
+student_adjacency = vertcat(student_adjacency, addedZeros2);
+studentMatrix = student_adjacency + studentMatrix;
+
+<span class="comment">%add connections</span>
+<span class="comment">%mary</span>
+studentMatrx(1,31)= 1;
+studentMatrix(31,1) = 1;
+studentMatrix(2,31) = 1;
+studentMatrix(31,2) = 1;
+studentMatrix(2,31) = 1;
+studentMatrix(31,3) = 1;
+studentMatrix(3,31) = 1;
+studentMatrix(31,4) = 1;
+studentMatrix(4,31) = 1;
+studentMatrix(31,5) = 1;
+studentMatrix(5,31) = 1;
+studentMatrix(31,6) = 1;
+studentMatrix(6,31) = 1;
+studentMatrix(31,7) = 1;
+studentMatrix(7,31) = 1;
+studentMatrix(31,8) = 1;
+studentMatrix(8,31) = 1;
+studentMatrix(31,9) = 1;
+studentMatrix(9,31) = 1;
+
+<span class="comment">%Fred</span>
+studentMatrix(32,10) = 1;
+studentMatrix(10,32) = 1;
+studentMatrix(32,11) = 1;
+studentMatrix(11,32) = 1;
+studentMatrix(32,12) = 1;
+studentMatrix(12,32) = 1;
+studentMatrix(32,13) = 1;
+studentMatrix(13,32) = 1;
+studentMatrix(32,14) = 1;
+studentMatrix(14,32) = 1;
+
+<span class="comment">%Veronica</span>
+studentMatrix(33,15) = 1;
+studentMatrix(15,33) = 1;
+studentMatrix(33,16) = 1;
+studentMatrix(16,33) = 1;
+studentMatrix(33,17) = 1;
+studentMatrix(17,33) = 1;
+studentMatrix(33,18) = 1;
+studentMatrix(18,33) = 1;
+studentMatrix(33,19) = 1;
+studentMatrix(19,33) = 1;
+
+<span class="comment">%Use Power Method</span>
+[domV, domGamma, bkVec] = powerMethod(studentMatrix);
+<span class="comment">%Find error at iteration k</span>
+[row, col] = size(bkVec);
+<span class="keyword">for</span> k = 1:1:row;
+    ekVec(k,1) = k;
+    ekVec(k,2) = norm(transpose(bkVec(k,:))-domV);
+<span class="keyword">end</span>
+
+rateConv = ekVec(51,2)/ekVec(50,2)
+<span class="keyword">for</span> i = 1:1:row;
+    rval(i, 1) = (log(rateConv)/log(10))*i;
+<span class="keyword">end</span>
+[hAx,hLine1,hLine2] = plotyy(ekVec(:,1),ekVec(:,2),ekVec(:,1),rval,<span class="string">'semilogy'</span>,<span class="string">'plot'</span>);
+xlabel(<span class="string">'Iteration'</span>)
+ylabel(hAx(1),<span class="string">'Error From True EigenVector'</span>)
+ylabel(hAx(2),<span class="string">'R-Value'</span>)
+title(<span class="string">'Error vs. Iteration'</span>);
+<span class="keyword">for</span>(i=1:1:33)
+    vert(i,1) = i;
+<span class="keyword">end</span>
+sortedRows = horzcat(domV, vert);
+sortedPeople = sortrows(sortedRows, 1)
+</pre><pre class="codeoutput">
+bookAdjacency =
+
+     0     0     0     0     1     0
+     0     0     0     0     1     1
+     0     1     0     0     0     1
+     1     0     1     0     1     0
+     1     1     0     1     0     0
+     1     1     1     0     0     0
+
+
+v =
+
+   -0.2132
+   -0.4072
+   -0.3738
+   -0.4725
+   -0.4827
+   -0.4391
+
+
+e =
+
+    2.2640
+
+
+rateConv =
+
+    0.7437
+
+
+sortedPeople =
+
+         0   25.0000
+    0.0353   29.0000
+    0.1051   23.0000
+    0.1070   24.0000
+    0.1367   20.0000
+    0.1367   27.0000
+    0.1415   11.0000
+    0.2290   21.0000
+    0.2387   22.0000
+    0.4000   19.0000
+    0.4050   18.0000
+    0.4136   16.0000
+    0.4176   28.0000
+    0.4209   15.0000
+    0.4283   14.0000
+    0.4433   10.0000
+    0.4619   26.0000
+    0.5276    1.0000
+    0.5312   32.0000
+    0.5317   12.0000
+    0.5463   33.0000
+    0.5473    4.0000
+    0.5473    7.0000
+    0.5482   17.0000
+    0.5825   13.0000
+    0.6057   30.0000
+    0.9169    8.0000
+    0.9925    5.0000
+    1.0110    9.0000
+    1.0554    2.0000
+    1.2439    3.0000
+    1.3879    6.0000
+    2.0551   31.0000
+
+</pre><img vspace="5" hspace="5" src="bookProblem_01.png" alt=""> <p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2013b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%Question 4
+                %1, 2, 3, 4, 5, 6,
+bookAdjacency = [0, 0, 0, 0, 1, 0;%1
+                 0, 0, 0, 0, 1, 1;%2
+                 0, 1, 0, 0, 0, 1;%3
+                 1, 0, 1, 0, 1, 0;%4
+                 1, 1, 0, 1, 0, 0;%5
+                 1, 1, 1, 0, 0, 0]%6
+[v,e]=eigs(bookAdjacency, 1)
+
+%Create student matrix
+load('student_adjacency.txt')
+studentMatrix = zeros(33, 33);
+addedZeros = zeros(30,1);
+addedZeros2 = zeros(1, 33);
+student_adjacency = horzcat(student_adjacency, addedZeros);
+student_adjacency = horzcat(student_adjacency, addedZeros);
+student_adjacency = horzcat(student_adjacency, addedZeros);
+student_adjacency = vertcat(student_adjacency, addedZeros2);
+student_adjacency = vertcat(student_adjacency, addedZeros2);
+student_adjacency = vertcat(student_adjacency, addedZeros2);
+studentMatrix = student_adjacency + studentMatrix;
+
+%add connections
+%mary
+studentMatrx(1,31)= 1;
+studentMatrix(31,1) = 1;
+studentMatrix(2,31) = 1;
+studentMatrix(31,2) = 1;
+studentMatrix(2,31) = 1;
+studentMatrix(31,3) = 1;
+studentMatrix(3,31) = 1;
+studentMatrix(31,4) = 1;
+studentMatrix(4,31) = 1;
+studentMatrix(31,5) = 1;
+studentMatrix(5,31) = 1;
+studentMatrix(31,6) = 1;
+studentMatrix(6,31) = 1;
+studentMatrix(31,7) = 1;
+studentMatrix(7,31) = 1;
+studentMatrix(31,8) = 1;
+studentMatrix(8,31) = 1;
+studentMatrix(31,9) = 1;
+studentMatrix(9,31) = 1;
+
+%Fred
+studentMatrix(32,10) = 1;
+studentMatrix(10,32) = 1;
+studentMatrix(32,11) = 1;
+studentMatrix(11,32) = 1;
+studentMatrix(32,12) = 1;
+studentMatrix(12,32) = 1;
+studentMatrix(32,13) = 1;
+studentMatrix(13,32) = 1;
+studentMatrix(32,14) = 1;
+studentMatrix(14,32) = 1;
+
+%Veronica
+studentMatrix(33,15) = 1;
+studentMatrix(15,33) = 1;
+studentMatrix(33,16) = 1;
+studentMatrix(16,33) = 1;
+studentMatrix(33,17) = 1;
+studentMatrix(17,33) = 1;
+studentMatrix(33,18) = 1;
+studentMatrix(18,33) = 1;
+studentMatrix(33,19) = 1;
+studentMatrix(19,33) = 1;
+
+%Use Power Method
+[domV, domGamma, bkVec] = powerMethod(studentMatrix);
+%Find error at iteration k
+[row, col] = size(bkVec);
+for k = 1:1:row;
+    ekVec(k,1) = k;
+    ekVec(k,2) = norm(transpose(bkVec(k,:))-domV);
+end
+
+rateConv = ekVec(51,2)/ekVec(50,2)
+for i = 1:1:row;
+    rval(i, 1) = (log(rateConv)/log(10))*i;
+end
+[hAx,hLine1,hLine2] = plotyy(ekVec(:,1),ekVec(:,2),ekVec(:,1),rval,'semilogy','plot');
+xlabel('Iteration')
+ylabel(hAx(1),'Error From True EigenVector')
+ylabel(hAx(2),'R-Value')
+title('Error vs. Iteration');
+for(i=1:1:33)
+    vert(i,1) = i;
+end
+sortedRows = horzcat(domV, vert);
+sortedPeople = sortrows(sortedRows, 1)
+##### SOURCE END #####
+--></body></html>

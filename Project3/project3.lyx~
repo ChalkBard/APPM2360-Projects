@@ -1,5 +1,5 @@
-#LyX 2.0 created this file. For more info see http://www.lyx.org/
-\lyxformat 413
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
 \begin_document
 \begin_header
 \textclass article
@@ -20,13 +20,13 @@
 \font_roman default
 \font_sans default
 \font_typewriter default
+\font_math auto
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
-
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -37,15 +37,24 @@
 \use_hyperref false
 \papersize default
 \use_geometry true
-\use_amsmath 1
-\use_esint 1
-\use_mhchem 1
-\use_mathdots 1
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
 \cite_engine basic
+\cite_engine_type default
+\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
 \suppress_date false
+\justification true
 \use_refstyle 1
 \index Index
 \shortcut idx
@@ -191,14 +200,14 @@ status open
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="7">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
 <row>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -662,7 +671,7 @@ X
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 Book Citation Matrix
@@ -696,9 +705,9 @@ status open
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="2">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -847,7 +856,7 @@ EigenVector Value
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 Eigenvector for Book Citation Matrix
@@ -978,7 +987,7 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 Error and Rate of Convergence Plot
@@ -1008,7 +1017,12 @@ In the plot shown above it can be clearly seen that both the error between
  This makes sense because a linear rate of convergence must necessarily
  drive an exponential decrease in the error from the true eigenvector which
  becomes linear when graphed using a semilog plot.
- Using the power method we found the eigenvector shown in table 3.
+ 
+\end_layout
+
+\begin_layout Standard
+Using the power method we found the eigenvector of centrality scores shown
+ in table 3.
 \end_layout
 
 \begin_layout Standard
@@ -1022,9 +1036,9 @@ status open
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="34" columns="2">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -1717,7 +1731,7 @@ EigenVector Value
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 Eigenvector for Student Friendship Matrix
@@ -1748,10 +1762,10 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="31" columns="2">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
+<lyxtabular version="3" rows="33" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -1786,6 +1800,26 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
+31
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 6
 \end_layout
 
@@ -1797,26 +1831,6 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-2
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-3
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 3
 \end_layout
 
@@ -1826,7 +1840,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-2
+3
 \end_layout
 
 \end_inset
@@ -1846,7 +1860,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-9
+2
 \end_layout
 
 \end_inset
@@ -1866,7 +1880,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-5
+9
 \end_layout
 
 \end_inset
@@ -1886,7 +1900,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-8
+5
 \end_layout
 
 \end_inset
@@ -1898,6 +1912,26 @@ Student
 
 \begin_layout Plain Layout
 7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
 \end_layout
 
 \end_inset
@@ -1917,26 +1951,6 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-8
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-13
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 9
 \end_layout
 
@@ -1946,7 +1960,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-17
+13
 \end_layout
 
 \end_inset
@@ -1966,7 +1980,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-7
+17
 \end_layout
 
 \end_inset
@@ -1986,7 +2000,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-4
+7
 \end_layout
 
 \end_inset
@@ -2006,7 +2020,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-12
+4
 \end_layout
 
 \end_inset
@@ -2018,6 +2032,66 @@ Student
 
 \begin_layout Plain Layout
 13
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+33
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+14
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+15
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+32
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+16
 \end_layout
 
 \end_inset
@@ -2037,7 +2111,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-14
+17
 \end_layout
 
 \end_inset
@@ -2057,7 +2131,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-15
+18
 \end_layout
 
 \end_inset
@@ -2077,7 +2151,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-16
+19
 \end_layout
 
 \end_inset
@@ -2097,7 +2171,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-17
+20
 \end_layout
 
 \end_inset
@@ -2117,7 +2191,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-18
+21
 \end_layout
 
 \end_inset
@@ -2137,7 +2211,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-19
+22
 \end_layout
 
 \end_inset
@@ -2157,7 +2231,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-20
+23
 \end_layout
 
 \end_inset
@@ -2177,7 +2251,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-21
+24
 \end_layout
 
 \end_inset
@@ -2197,66 +2271,6 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-22
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-22
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-23
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-21
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-24
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-11
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 25
 \end_layout
 
@@ -2266,7 +2280,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-20
+22
 \end_layout
 
 \end_inset
@@ -2286,7 +2300,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-27
+21
 \end_layout
 
 \end_inset
@@ -2306,7 +2320,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-24
+11
 \end_layout
 
 \end_inset
@@ -2326,7 +2340,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-23
+20/27
 \end_layout
 
 \end_inset
@@ -2346,6 +2360,46 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
+24
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+30
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+23
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+31
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 29
 \end_layout
 
@@ -2357,7 +2411,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-30
+32
 \end_layout
 
 \end_inset
@@ -2380,10 +2434,10 @@ Student
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Students 1-30 Ranked by Popularity
+Students 1-33 Ranked by Popularity
 \end_layout
 
 \end_inset
@@ -2402,8 +2456,9 @@ Students 1-30 Ranked by Popularity
 
 \begin_layout Standard
 We then consider the special case of the rankings of the candidates.
- Based on the numbers found in table 3 we can conclude that P31, Mary wins
- with P33, Veronica and P32, Fred taking second and third respectively.
+ Based on the numbers found in table 4 we can conclude that P31, Mary wins
+ the election with P33, Veronica and P32, Fred taking second and third respectiv
+ely.
  
 \end_layout
 
@@ -2450,7 +2505,7 @@ Adjacency matrices can be used to model a large number of systems.
 \end_layout
 
 \begin_layout Part
-Appendix A: Linear Shooting Code
+Appendix A: General Solution Code
 \end_layout
 
 \begin_layout Standard
@@ -2458,7 +2513,7 @@ Please See Attached
 \end_layout
 
 \begin_layout Part
-Appendix B: Truss Structure Code
+Appendix B: 
 \end_layout
 
 \begin_layout Standard

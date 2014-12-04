@@ -39,14 +39,14 @@
 \use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
-\use_package cancel 0
+\use_package cancel 1
 \use_package esint 1
 \use_package mathdots 1
-\use_package mathtools 0
+\use_package mathtools 1
 \use_package mhchem 1
-\use_package stackrel 0
-\use_package stmaryrd 0
-\use_package undertilde 0
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
 \cite_engine basic
 \cite_engine_type default
 \biblio_style plain
@@ -978,7 +978,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename Log(ek).eps
+	filename C:/Users/Jay/OneDrive/Documents/CU Boulder/Fall 2014/DBQ/DBQ project/DBQ project 3/Log(ek).eps
 	scale 50
 
 \end_inset
@@ -1017,12 +1017,7 @@ In the plot shown above it can be clearly seen that both the error between
  This makes sense because a linear rate of convergence must necessarily
  drive an exponential decrease in the error from the true eigenvector which
  becomes linear when graphed using a semilog plot.
- 
-\end_layout
-
-\begin_layout Standard
-Using the power method we found the eigenvector of centrality scores shown
- in table 3.
+ Using the power method we found the eigenvector shown in table 3.
 \end_layout
 
 \begin_layout Standard
@@ -1762,7 +1757,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="33" columns="2">
+<lyxtabular version="3" rows="31" columns="2">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -1800,7 +1795,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-31
+6
 \end_layout
 
 \end_inset
@@ -1820,7 +1815,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-6
+3
 \end_layout
 
 \end_inset
@@ -1840,7 +1835,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-3
+2
 \end_layout
 
 \end_inset
@@ -1860,7 +1855,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-2
+9
 \end_layout
 
 \end_inset
@@ -1880,7 +1875,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-9
+5
 \end_layout
 
 \end_inset
@@ -1900,7 +1895,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-5
+8
 \end_layout
 
 \end_inset
@@ -1912,26 +1907,6 @@ Student
 
 \begin_layout Plain Layout
 7
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-8
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-8
 \end_layout
 
 \end_inset
@@ -1951,7 +1926,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-9
+8
 \end_layout
 
 \end_inset
@@ -1971,7 +1946,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-10
+9
 \end_layout
 
 \end_inset
@@ -1991,7 +1966,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-11
+10
 \end_layout
 
 \end_inset
@@ -2011,7 +1986,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-12
+11
 \end_layout
 
 \end_inset
@@ -2031,27 +2006,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-13
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-33
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-14
+12
 \end_layout
 
 \end_inset
@@ -2071,27 +2026,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-15
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-32
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-16
+13
 \end_layout
 
 \end_inset
@@ -2111,7 +2046,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-17
+14
 \end_layout
 
 \end_inset
@@ -2131,7 +2066,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-18
+15
 \end_layout
 
 \end_inset
@@ -2151,7 +2086,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-19
+16
 \end_layout
 
 \end_inset
@@ -2171,7 +2106,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-20
+17
 \end_layout
 
 \end_inset
@@ -2191,7 +2126,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-21
+18
 \end_layout
 
 \end_inset
@@ -2211,7 +2146,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-22
+19
 \end_layout
 
 \end_inset
@@ -2231,7 +2166,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-23
+20
 \end_layout
 
 \end_inset
@@ -2251,7 +2186,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-24
+21
 \end_layout
 
 \end_inset
@@ -2271,7 +2206,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-25
+22
 \end_layout
 
 \end_inset
@@ -2291,7 +2226,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-26
+23
 \end_layout
 
 \end_inset
@@ -2311,7 +2246,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-27
+24
 \end_layout
 
 \end_inset
@@ -2331,7 +2266,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-28
+25
 \end_layout
 
 \end_inset
@@ -2340,7 +2275,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-20/27
+20
 \end_layout
 
 \end_inset
@@ -2351,7 +2286,27 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-29
+26
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+27
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+27
 \end_layout
 
 \end_inset
@@ -2371,7 +2326,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-30
+28
 \end_layout
 
 \end_inset
@@ -2391,7 +2346,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-31
+29
 \end_layout
 
 \end_inset
@@ -2411,7 +2366,7 @@ Student
 \begin_inset Text
 
 \begin_layout Plain Layout
-32
+30
 \end_layout
 
 \end_inset
@@ -2437,7 +2392,7 @@ Student
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Students 1-33 Ranked by Popularity
+Students 1-30 Ranked by Popularity
 \end_layout
 
 \end_inset
@@ -2456,9 +2411,8 @@ Students 1-33 Ranked by Popularity
 
 \begin_layout Standard
 We then consider the special case of the rankings of the candidates.
- Based on the numbers found in table 4 we can conclude that P31, Mary wins
- the election with P33, Veronica and P32, Fred taking second and third respectiv
-ely.
+ Based on the numbers found in table 3 we can conclude that P31, Mary wins
+ with P33, Veronica and P32, Fred taking second and third respectively.
  
 \end_layout
 
@@ -2491,8 +2445,19 @@ In order to prevent this kind of cheating from occuring two steps must be
 \end_layout
 
 \begin_layout Standard
-Based on the given data we believe that (ASSIGN WHICH STUDENT WE THINK SHOULD
- WIN AND WHAT WAS WE CAN MAKE THE SYSTEM MORE BALANCED)
+I would not picked the same students to be class president agian, because
+ the centrality score only tells us how popular the student we selected
+ for class president is.
+ It does not take into account that the performance of the student as class
+ president.
+ So in order to make the system more balacned, we could have students rate
+ the capability of each candidate (i.e.
+ their ability to work with students to resolve problems, lead the class
+ cabinet meetings and organize student acitivities and events.) We can then
+ take this new average score and multiply that by the centrality score,
+ compare the magnitude of the product to determine whoever is the most capable
+ and popular.
+ 
 \end_layout
 
 \begin_layout Part
@@ -2501,7 +2466,11 @@ Examples of Other Adjacency Matrix Applications
 
 \begin_layout Standard
 Adjacency matrices can be used to model a large number of systems.
- Examples include 
+ Examples include international trading, international airport, stock exchange
+ and text message.
+ International trade is an example of an adjacency matrix for a directed
+ graph because every country has other countries that it exports to and
+ 
 \end_layout
 
 \begin_layout Part
@@ -2513,7 +2482,7 @@ Please See Attached
 \end_layout
 
 \begin_layout Part
-Appendix B: Power Method Algorithim
+Appendix B: Power Method
 \end_layout
 
 \begin_layout Standard

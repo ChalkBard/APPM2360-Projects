@@ -17,7 +17,6 @@ while (absGammaCorrected > 0)
     gamma = norm(bx);
     bx = bk1/gamma;
     bkVec = vertcat(bkVec, transpose(bx));
-    index = index + 1;
 end
 bkVec = bkVec(2:end,1:end);
 maxV = bx;
